@@ -1,4 +1,7 @@
-const Transaction = ({ items, deleteItem }) => {
+const Transaction = ({ items, deleteItem, setItems }) => {
+  const deleteAll = () => {
+    setItems((items = []));
+  };
   return (
     <div>
       <div className="flex justify-center items-center p-10 flex-col w-full">
@@ -34,7 +37,7 @@ const Transaction = ({ items, deleteItem }) => {
                 <td>
                   <button
                     onClick={() => deleteItem(items.id)}
-                    className="bg-red-500 text-white py- px-3 ml-4 rounded hover:bg-red-600"
+                    className="bg-red-500 text-white py-1 px-3 ml-4 rounded hover:bg-red-600"
                   >
                     Delete
                   </button>
@@ -43,6 +46,14 @@ const Transaction = ({ items, deleteItem }) => {
             ))}
           </tbody>
         </table>
+        <div className="mt-6">
+          <button
+            onClick={deleteAll}
+            className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600"
+          >
+            Delete All
+          </button>
+        </div>
       </div>
     </div>
   );

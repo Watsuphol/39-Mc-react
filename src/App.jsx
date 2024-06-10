@@ -73,6 +73,7 @@ function App() {
             LastName={LastName}
             Position={Position}
             deleteItem={deleteItem}
+            setItems={setItems}
           />
         </div>
       ),

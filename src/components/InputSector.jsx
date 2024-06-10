@@ -10,6 +10,7 @@ const InputSector = ({
   LastName,
   Position,
   deleteItem,
+  setItems,
 }) => {
   return (
     <div>
@@ -24,6 +25,7 @@ const InputSector = ({
             className="flex-1 p-3 rounded-lg border border-gray-300 focus:outline-none"
             onChange={inputName}
             value={Name}
+            required
           />
           <input
             type="text"
@@ -31,6 +33,7 @@ const InputSector = ({
             className="flex-1 p-3 rounded-lg border border-gray-300 focus:outline-none"
             onChange={inputLastName}
             value={LastName}
+            required
           />
           <input
             type="text"
@@ -38,6 +41,7 @@ const InputSector = ({
             className="flex-1 p-3 rounded-lg border border-gray-300 focus:outline-none"
             onChange={inputPosition}
             value={Position}
+            required
           />
           <button
             type="submit"
@@ -47,7 +51,7 @@ const InputSector = ({
           </button>
         </div>
       </form>
-      <Transaction items={items} deleteItem={deleteItem} />
+      <Transaction items={items} deleteItem={deleteItem} setItems={setItems} />
     </div>
   );
 };
